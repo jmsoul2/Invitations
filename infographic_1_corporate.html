@@ -1,0 +1,1335 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Desayuno de Partners — UNFC.CA | Cámara de Comercio Ecuatoriano-Canadiense</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #E8ECF2;
+      font-family: 'Montserrat', sans-serif;
+      display: flex;
+      justify-content: center;
+      padding: 40px 20px;
+      min-height: 100vh;
+    }
+
+    .infographic {
+      width: 800px;
+      background: #F4F6F9;
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.18), 0 4px 16px rgba(0,0,0,0.10);
+    }
+
+    /* ─── HEADER ─── */
+    .header {
+      background: linear-gradient(135deg, #001f5c 0%, #003087 45%, #0057B8 100%);
+      padding: 48px 56px 40px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header::before {
+      content: '';
+      position: absolute;
+      top: -80px; right: -80px;
+      width: 320px; height: 320px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.04);
+    }
+
+    .header::after {
+      content: '';
+      position: absolute;
+      bottom: -60px; left: -60px;
+      width: 240px; height: 240px;
+      border-radius: 50%;
+      background: rgba(245,166,35,0.07);
+    }
+
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 36px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .org-badge {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .org-logo-mark {
+      width: 52px; height: 52px;
+      background: #FFFFFF;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.20);
+      flex-shrink: 0;
+    }
+
+    .org-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .org-name {
+      font-size: 13px;
+      font-weight: 700;
+      color: #FFFFFF;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      line-height: 1.2;
+    }
+
+    .org-subtitle {
+      font-size: 11px;
+      font-weight: 400;
+      color: rgba(255,255,255,0.65);
+      letter-spacing: 0.04em;
+      margin-top: 2px;
+    }
+
+    .geo-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.10);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 24px;
+      padding: 6px 16px;
+    }
+
+    .geo-badge span {
+      font-size: 11px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.85);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .header-main {
+      position: relative;
+      z-index: 2;
+    }
+
+    .event-type-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(245,166,35,0.18);
+      border: 1px solid rgba(245,166,35,0.45);
+      border-radius: 4px;
+      padding: 5px 14px;
+      margin-bottom: 18px;
+    }
+
+    .event-type-label span {
+      font-size: 10px;
+      font-weight: 700;
+      color: #F5A623;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .event-title {
+      font-size: 36px;
+      font-weight: 800;
+      color: #FFFFFF;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      margin-bottom: 8px;
+    }
+
+    .event-title em {
+      font-style: normal;
+      color: #F5A623;
+    }
+
+    .event-chamber {
+      font-size: 13px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.70);
+      letter-spacing: 0.04em;
+      margin-bottom: 32px;
+    }
+
+    /* ─── DATE / TIME / LOCATION STRIP ─── */
+    .datetime-strip {
+      display: flex;
+      gap: 0;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 8px;
+      overflow: hidden;
+      position: relative;
+      z-index: 2;
+    }
+
+    .dt-item {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 20px;
+    }
+
+    .dt-item + .dt-item {
+      border-left: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .dt-icon {
+      width: 36px; height: 36px;
+      background: rgba(245,166,35,0.15);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .dt-content {}
+
+    .dt-label {
+      font-size: 9px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.45);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 2px;
+    }
+
+    .dt-value {
+      font-size: 14px;
+      font-weight: 700;
+      color: #FFFFFF;
+      letter-spacing: 0.01em;
+    }
+
+    .dt-value.highlight {
+      color: #F5A623;
+    }
+
+    /* ─── DECORATIVE DIVIDER ─── */
+    .divider-bar {
+      height: 6px;
+      background: linear-gradient(90deg, #F5A623 0%, #F5A623 33%, #003087 33%, #003087 66%, #0057B8 66%, #0057B8 100%);
+    }
+
+    /* ─── INTRO BAND ─── */
+    .intro-band {
+      background: #FFFFFF;
+      padding: 28px 56px;
+      border-bottom: 1px solid #E2E8F0;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .intro-band-icon {
+      flex-shrink: 0;
+      width: 56px; height: 56px;
+      background: linear-gradient(135deg, #003087, #0057B8);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 14px rgba(0,48,135,0.25);
+    }
+
+    .intro-text {
+      flex: 1;
+    }
+
+    .intro-headline {
+      font-size: 16px;
+      font-weight: 700;
+      color: #003087;
+      margin-bottom: 4px;
+    }
+
+    .intro-body {
+      font-size: 12.5px;
+      font-weight: 400;
+      color: #5A6478;
+      line-height: 1.6;
+    }
+
+    .intro-body strong {
+      color: #003087;
+      font-weight: 600;
+    }
+
+    /* ─── SECTION HEADER ─── */
+    .section-header {
+      padding: 32px 56px 0;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+
+    .section-header-line {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, #CBD5E1 0%, transparent 100%);
+    }
+
+    .section-header-label {
+      font-size: 10px;
+      font-weight: 700;
+      color: #94A3B8;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    /* ─── AGENDA GRID ─── */
+    .agenda-grid {
+      padding: 0 56px 40px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 20px;
+    }
+
+    .agenda-card {
+      background: #FFFFFF;
+      border-radius: 10px;
+      padding: 28px 22px 24px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06), 0 1px 3px rgba(0,0,0,0.04);
+      border-top: 4px solid transparent;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      transition: all 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .agenda-card.card-networking { border-top-color: #0057B8; }
+    .agenda-card.card-updates   { border-top-color: #003087; }
+    .agenda-card.card-guest     { border-top-color: #F5A623; }
+
+    .agenda-card::before {
+      content: '';
+      position: absolute;
+      top: 0; right: 0;
+      width: 80px; height: 80px;
+      border-radius: 0 10px 0 80px;
+      opacity: 0.04;
+    }
+
+    .card-networking::before { background: #0057B8; }
+    .card-updates::before    { background: #003087; }
+    .card-guest::before      { background: #F5A623; }
+
+    .card-icon-wrap {
+      width: 52px; height: 52px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .card-networking .card-icon-wrap { background: #EFF6FF; }
+    .card-updates    .card-icon-wrap { background: #EEF2FF; }
+    .card-guest      .card-icon-wrap { background: #FFFBEB; }
+
+    .card-number {
+      position: absolute;
+      top: 14px; right: 16px;
+      font-size: 11px;
+      font-weight: 700;
+      color: #CBD5E1;
+      letter-spacing: 0.04em;
+    }
+
+    .card-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: #1E293B;
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+    }
+
+    .card-networking .card-title { color: #0057B8; }
+    .card-updates    .card-title { color: #003087; }
+    .card-guest      .card-title { color: #B45309; }
+
+    .card-body {
+      font-size: 11.5px;
+      font-weight: 400;
+      color: #64748B;
+      line-height: 1.65;
+    }
+
+    .card-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 9.5px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-top: auto;
+      align-self: flex-start;
+    }
+
+    .card-networking .card-tag { background: #DBEAFE; color: #1D4ED8; }
+    .card-updates    .card-tag { background: #E0E7FF; color: #3730A3; }
+    .card-guest      .card-tag { background: #FEF3C7; color: #92400E; }
+
+    /* ─── HAROLD FEATURE ─── */
+    .harold-section {
+      padding: 0 56px 40px;
+    }
+
+    .harold-card {
+      background: linear-gradient(135deg, #001f5c 0%, #003087 60%, #004ab0 100%);
+      border-radius: 12px;
+      padding: 32px 40px;
+      display: flex;
+      align-items: center;
+      gap: 36px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(0,48,135,0.28);
+    }
+
+    .harold-card::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 220px; height: 220px;
+      border-radius: 50%;
+      background: rgba(245,166,35,0.08);
+    }
+
+    .harold-card::after {
+      content: '';
+      position: absolute;
+      bottom: -80px; left: 200px;
+      width: 280px; height: 280px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.03);
+    }
+
+    .harold-avatar {
+      flex-shrink: 0;
+      width: 96px; height: 96px;
+      background: rgba(255,255,255,0.10);
+      border-radius: 50%;
+      border: 3px solid rgba(245,166,35,0.50);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .harold-info {
+      flex: 1;
+      position: relative;
+      z-index: 2;
+    }
+
+    .harold-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(245,166,35,0.18);
+      border: 1px solid rgba(245,166,35,0.40);
+      border-radius: 4px;
+      padding: 4px 12px;
+      margin-bottom: 12px;
+    }
+
+    .harold-tag span {
+      font-size: 9px;
+      font-weight: 700;
+      color: #F5A623;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .harold-name {
+      font-size: 26px;
+      font-weight: 800;
+      color: #FFFFFF;
+      letter-spacing: -0.02em;
+      margin-bottom: 6px;
+    }
+
+    .harold-title {
+      font-size: 13px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.70);
+      line-height: 1.5;
+    }
+
+    .harold-title strong {
+      color: #F5A623;
+      font-weight: 700;
+    }
+
+    .harold-divider {
+      width: 1px;
+      height: 72px;
+      background: rgba(255,255,255,0.15);
+      flex-shrink: 0;
+      position: relative;
+      z-index: 2;
+    }
+
+    .harold-quote {
+      flex: 0 0 200px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .harold-quote-mark {
+      font-size: 48px;
+      line-height: 0.8;
+      color: rgba(245,166,35,0.35);
+      font-family: Georgia, serif;
+      margin-bottom: 8px;
+    }
+
+    .harold-quote-text {
+      font-size: 11.5px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.6;
+      font-style: italic;
+    }
+
+    /* ─── BILATERAL BRIDGE ─── */
+    .bridge-section {
+      padding: 0 56px 40px;
+    }
+
+    .bridge-card {
+      background: #FFFFFF;
+      border-radius: 10px;
+      padding: 28px 36px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .bridge-side {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .bridge-flag {
+      width: 56px; height: 56px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .bridge-flag.ec { background: linear-gradient(135deg, #FCD116 0%, #003893 50%, #CC0001 100%); }
+    .bridge-flag.ca { background: linear-gradient(135deg, #FF0000 0%, #FFFFFF 50%, #FF0000 100%); }
+
+    .bridge-country {
+      flex: 1;
+    }
+
+    .bridge-country-name {
+      font-size: 14px;
+      font-weight: 700;
+      color: #1E293B;
+      margin-bottom: 3px;
+    }
+
+    .bridge-country-desc {
+      font-size: 11px;
+      color: #64748B;
+      line-height: 1.5;
+    }
+
+    .bridge-center {
+      flex: 0 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .bridge-connector {
+      width: 56px; height: 56px;
+      background: linear-gradient(135deg, #003087, #0057B8);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 14px rgba(0,48,135,0.25);
+    }
+
+    .bridge-label {
+      font-size: 9px;
+      font-weight: 700;
+      color: #94A3B8;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    /* ─── KEY FACTS ─── */
+    .facts-section {
+      padding: 0 56px 40px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      gap: 16px;
+    }
+
+    .fact-card {
+      background: #FFFFFF;
+      border-radius: 10px;
+      padding: 22px 18px;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      border-bottom: 3px solid #E2E8F0;
+    }
+
+    .fact-card.accent { border-bottom-color: #F5A623; }
+    .fact-card.primary { border-bottom-color: #003087; }
+    .fact-card.secondary { border-bottom-color: #0057B8; }
+    .fact-card.neutral { border-bottom-color: #94A3B8; }
+
+    .fact-icon {
+      width: 40px; height: 40px;
+      margin: 0 auto 12px;
+      background: #F4F6F9;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .fact-value {
+      font-size: 22px;
+      font-weight: 800;
+      color: #003087;
+      letter-spacing: -0.02em;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .fact-label {
+      font-size: 10px;
+      font-weight: 600;
+      color: #94A3B8;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+    }
+
+    /* ─── TIMELINE ─── */
+    .timeline-section {
+      padding: 0 56px 40px;
+    }
+
+    .timeline-card {
+      background: #FFFFFF;
+      border-radius: 10px;
+      padding: 28px 36px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+
+    .timeline-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: #003087;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+
+    .timeline-track {
+      display: flex;
+      align-items: flex-start;
+      gap: 0;
+      position: relative;
+    }
+
+    .timeline-track::before {
+      content: '';
+      position: absolute;
+      top: 14px; left: 14px; right: 14px;
+      height: 2px;
+      background: linear-gradient(90deg, #003087 0%, #0057B8 50%, #F5A623 100%);
+      z-index: 0;
+    }
+
+    .timeline-step {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .timeline-dot {
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      border: 3px solid #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+
+    .timeline-dot.dot-1 { background: #003087; }
+    .timeline-dot.dot-2 { background: #003087; }
+    .timeline-dot.dot-3 { background: #0057B8; }
+    .timeline-dot.dot-4 { background: #0057B8; }
+    .timeline-dot.dot-5 { background: #F5A623; }
+
+    .timeline-time {
+      font-size: 11px;
+      font-weight: 700;
+      color: #003087;
+    }
+
+    .timeline-desc {
+      font-size: 10px;
+      font-weight: 500;
+      color: #64748B;
+      text-align: center;
+      line-height: 1.4;
+    }
+
+    /* ─── FOOTER ─── */
+    .footer {
+      background: linear-gradient(135deg, #001f5c 0%, #003087 100%);
+      padding: 32px 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .footer-logo {
+      width: 44px; height: 44px;
+      background: #FFFFFF;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .footer-brand-text {}
+
+    .footer-brand-name {
+      font-size: 14px;
+      font-weight: 700;
+      color: #FFFFFF;
+      letter-spacing: 0.04em;
+    }
+
+    .footer-brand-url {
+      font-size: 11px;
+      color: rgba(255,255,255,0.55);
+      margin-top: 2px;
+    }
+
+    .footer-center {
+      text-align: center;
+    }
+
+    .footer-tagline {
+      font-size: 11px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.60);
+      letter-spacing: 0.06em;
+    }
+
+    .footer-tagline strong {
+      color: #F5A623;
+    }
+
+    .footer-right {
+      text-align: right;
+    }
+
+    .footer-date-badge {
+      background: rgba(245,166,35,0.15);
+      border: 1px solid rgba(245,166,35,0.35);
+      border-radius: 6px;
+      padding: 8px 16px;
+      display: inline-block;
+    }
+
+    .footer-date-badge .date-day {
+      font-size: 20px;
+      font-weight: 800;
+      color: #F5A623;
+      line-height: 1;
+    }
+
+    .footer-date-badge .date-month {
+      font-size: 10px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.70);
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+    }
+
+    /* ─── WATERMARK LINE ─── */
+    .footer-bottom {
+      background: #001540;
+      padding: 10px 56px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-bottom span {
+      font-size: 9.5px;
+      color: rgba(255,255,255,0.30);
+      letter-spacing: 0.08em;
+    }
+  </style>
+</head>
+<body>
+<div class="infographic">
+
+  <!-- ═══════════════════════════════════
+       HEADER
+  ══════════════════════════════════════ -->
+  <div class="header">
+    <div class="header-top">
+      <!-- Organization Badge -->
+      <div class="org-badge">
+        <div class="org-logo-mark">
+          <!-- UNFC stylized mark: shield + maple leaf hint -->
+          <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17 2L4 7.5V18C4 24.627 9.373 30.5 17 32C24.627 30.5 30 24.627 30 18V7.5L17 2Z" fill="#003087"/>
+            <path d="M17 6L7 10.5V18C7 23.523 11.477 28.5 17 30C22.523 28.5 27 23.523 27 18V10.5L17 6Z" fill="#0057B8"/>
+            <!-- Maple leaf hint -->
+            <path d="M17 12 L15.5 15 L13 14.5 L14.5 16.5 L13.5 19.5 L17 18 L20.5 19.5 L19.5 16.5 L21 14.5 L18.5 15 Z" fill="#F5A623" opacity="0.9"/>
+            <rect x="16" y="19" width="2" height="3" rx="0.5" fill="#F5A623" opacity="0.9"/>
+          </svg>
+        </div>
+        <div class="org-text">
+          <div class="org-name">University of Niagara Falls Canada</div>
+          <div class="org-subtitle">UNFC.CA — International Affairs Office</div>
+        </div>
+      </div>
+      <!-- Geo Badge -->
+      <div class="geo-badge">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+          <circle cx="6" cy="5" r="3.5" stroke="rgba(255,255,255,0.7)" stroke-width="1.2"/>
+          <path d="M6 8.5 L6 11" stroke="rgba(255,255,255,0.7)" stroke-width="1.2" stroke-linecap="round"/>
+          <circle cx="6" cy="5" r="1" fill="rgba(255,255,255,0.7)"/>
+        </svg>
+        <span>Quito, Ecuador</span>
+      </div>
+    </div>
+
+    <!-- Event Label -->
+    <div class="header-main">
+      <div class="event-type-label">
+        <svg width="8" height="8" viewBox="0 0 8 8" fill="none">
+          <circle cx="4" cy="4" r="3" fill="#F5A623"/>
+        </svg>
+        <span>Evento Corporativo Exclusivo</span>
+      </div>
+
+      <h1 class="event-title">
+        Desayuno de<br/><em>Partners</em>
+      </h1>
+      <div class="event-chamber">
+        Cámara de Comercio Ecuatoriano-Canadiense &nbsp;•&nbsp; Organizado por UNFC.CA
+      </div>
+
+      <!-- DateTime Strip -->
+      <div class="datetime-strip">
+        <div class="dt-item">
+          <div class="dt-icon">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <rect x="1.5" y="3" width="15" height="13.5" rx="2" stroke="#F5A623" stroke-width="1.4"/>
+              <path d="M1.5 7H16.5" stroke="#F5A623" stroke-width="1.4"/>
+              <rect x="5.25" y="1.5" width="1.5" height="3" rx="0.75" fill="#F5A623"/>
+              <rect x="11.25" y="1.5" width="1.5" height="3" rx="0.75" fill="#F5A623"/>
+              <rect x="5" y="10" width="2" height="2" rx="0.5" fill="#F5A623"/>
+              <rect x="8.5" y="10" width="2" height="2" rx="0.5" fill="#F5A623"/>
+              <rect x="12" y="10" width="2" height="2" rx="0.5" fill="#F5A623"/>
+            </svg>
+          </div>
+          <div class="dt-content">
+            <div class="dt-label">Fecha</div>
+            <div class="dt-value highlight">9 de Abril, 2026</div>
+          </div>
+        </div>
+        <div class="dt-item">
+          <div class="dt-icon">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <circle cx="9" cy="9" r="7.5" stroke="#F5A623" stroke-width="1.4"/>
+              <path d="M9 5V9.5L12 11.5" stroke="#F5A623" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="dt-content">
+            <div class="dt-label">Horario</div>
+            <div class="dt-value highlight">9:00 AM – 11:00 AM</div>
+          </div>
+        </div>
+        <div class="dt-item">
+          <div class="dt-icon">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <path d="M9 1.5C6.515 1.5 4.5 3.515 4.5 6C4.5 9.75 9 16.5 9 16.5C9 16.5 13.5 9.75 13.5 6C13.5 3.515 11.485 1.5 9 1.5Z" stroke="#F5A623" stroke-width="1.4"/>
+              <circle cx="9" cy="6" r="1.75" fill="#F5A623"/>
+            </svg>
+          </div>
+          <div class="dt-content">
+            <div class="dt-label">Sede</div>
+            <div class="dt-value">Quito, Ecuador</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- COLOR DIVIDER -->
+  <div class="divider-bar"></div>
+
+  <!-- ═══════════════════════════════════
+       INTRO BAND
+  ══════════════════════════════════════ -->
+  <div class="intro-band">
+    <div class="intro-band-icon">
+      <!-- Handshake / partnership icon -->
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+        <path d="M3 16L8 11H13L17 9H20L25 14" stroke="#FFFFFF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M3 16L7 20L11 18L16 21L20 19L25 14" stroke="#FFFFFF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M7 20L9 22" stroke="#F5A623" stroke-width="1.6" stroke-linecap="round"/>
+        <path d="M11 18L13 20" stroke="#F5A623" stroke-width="1.6" stroke-linecap="round"/>
+        <path d="M16 21L18 23" stroke="#F5A623" stroke-width="1.6" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="intro-text">
+      <div class="intro-headline">Fortaleciendo el Puente Empresarial entre Ecuador y Canadá</div>
+      <div class="intro-body">
+        Un espacio exclusivo de dos horas diseñado para <strong>conectar líderes empresariales</strong>, explorar oportunidades de colaboración académica y empresarial, y recibir las <strong>últimas novedades de UNFC.CA</strong> — la Universidad de Niagara Falls, Canada.
+      </div>
+    </div>
+    <!-- Ecuador-Canada fusion icon -->
+    <div style="flex-shrink:0;">
+      <svg width="80" height="64" viewBox="0 0 80 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Andes silhouette (Ecuador) -->
+        <path d="M2 52 L10 38 L16 44 L24 28 L32 40 L38 34" stroke="#003087" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"/>
+        <!-- Sun rays (Ecuador) -->
+        <circle cx="24" cy="18" r="6" fill="none" stroke="#F5A623" stroke-width="1.5" opacity="0.7"/>
+        <line x1="24" y1="9" x2="24" y2="7" stroke="#F5A623" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
+        <line x1="24" y1="27" x2="24" y2="29" stroke="#F5A623" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
+        <line x1="15" y1="18" x2="13" y2="18" stroke="#F5A623" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
+        <line x1="33" y1="18" x2="35" y2="18" stroke="#F5A623" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
+        <line x1="17.8" y1="11.8" x2="16.4" y2="10.4" stroke="#F5A623" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
+        <line x1="30.2" y1="24.2" x2="31.6" y2="25.6" stroke="#F5A623" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
+        <line x1="17.8" y1="24.2" x2="16.4" y2="25.6" stroke="#F5A623" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
+        <line x1="30.2" y1="11.8" x2="31.6" y2="10.4" stroke="#F5A623" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
+        <!-- Maple leaf (Canada) - abstract -->
+        <path d="M56 10 L54 16 L50 15 L53 19 L51 26 L56 23 L61 26 L59 19 L62 15 L58 16 Z" fill="#003087" opacity="0.5"/>
+        <rect x="55" y="26" width="2" height="4" rx="1" fill="#003087" opacity="0.5"/>
+        <!-- Connecting line -->
+        <path d="M38 34 Q46 40 50 38" stroke="#0057B8" stroke-width="1.5" stroke-dasharray="3 2" opacity="0.5" fill="none"/>
+      </svg>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════
+       AGENDA SECTION
+  ══════════════════════════════════════ -->
+  <div class="section-header">
+    <div class="section-header-label">Programa del Evento</div>
+    <div class="section-header-line"></div>
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink:0;">
+      <rect x="1" y="1" width="14" height="14" rx="3" stroke="#CBD5E1" stroke-width="1.2"/>
+      <path d="M4 5H12M4 8H10M4 11H8" stroke="#CBD5E1" stroke-width="1.2" stroke-linecap="round"/>
+    </svg>
+  </div>
+
+  <div class="agenda-grid">
+
+    <!-- CARD 1: NETWORKING -->
+    <div class="agenda-card card-networking">
+      <span class="card-number">01</span>
+      <div class="card-icon-wrap">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+          <!-- Network nodes -->
+          <circle cx="14" cy="8" r="3" fill="#0057B8" opacity="0.9"/>
+          <circle cx="6" cy="20" r="3" fill="#0057B8" opacity="0.7"/>
+          <circle cx="22" cy="20" r="3" fill="#0057B8" opacity="0.7"/>
+          <!-- Connections -->
+          <line x1="14" y1="11" x2="6" y2="17" stroke="#0057B8" stroke-width="1.5" opacity="0.5"/>
+          <line x1="14" y1="11" x2="22" y2="17" stroke="#0057B8" stroke-width="1.5" opacity="0.5"/>
+          <line x1="9" y1="20" x2="19" y2="20" stroke="#0057B8" stroke-width="1.5" opacity="0.5"/>
+          <!-- Pulse rings -->
+          <circle cx="14" cy="8" r="5.5" stroke="#0057B8" stroke-width="0.8" opacity="0.3"/>
+        </svg>
+      </div>
+      <div class="card-title">Networking Empresarial</div>
+      <div class="card-body">
+        Espacio estructurado para que ejecutivos y representantes empresariales construyan conexiones estratégicas entre Ecuador y Canadá. Intercambio de oportunidades de negocio e inversión.
+      </div>
+      <div class="card-tag">
+        <svg width="8" height="8" viewBox="0 0 8 8" fill="none">
+          <circle cx="4" cy="4" r="3" fill="#1D4ED8"/>
+        </svg>
+        Relaciones Estratégicas
+      </div>
+    </div>
+
+    <!-- CARD 2: UNFC UPDATES -->
+    <div class="agenda-card card-updates">
+      <span class="card-number">02</span>
+      <div class="card-icon-wrap">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+          <!-- University/building icon -->
+          <rect x="6" y="14" width="16" height="10" rx="1" stroke="#003087" stroke-width="1.4"/>
+          <path d="M4 14 L14 6 L24 14" stroke="#003087" stroke-width="1.4" stroke-linejoin="round"/>
+          <!-- Door -->
+          <rect x="11.5" y="18" width="5" height="6" rx="0.5" fill="#003087" opacity="0.3"/>
+          <!-- Windows -->
+          <rect x="7.5" y="16" width="3" height="2.5" rx="0.3" fill="#003087" opacity="0.4"/>
+          <rect x="17.5" y="16" width="3" height="2.5" rx="0.3" fill="#003087" opacity="0.4"/>
+          <!-- Flag/torch top -->
+          <line x1="14" y1="3" x2="14" y2="6" stroke="#F5A623" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M14 3 L17 4.5 L14 6Z" fill="#F5A623"/>
+        </svg>
+      </div>
+      <div class="card-title">UNFC.CA Updates</div>
+      <div class="card-body">
+        Presentación de las últimas iniciativas académicas, programas de internacionalización, convenios y oportunidades de alianza estratégica con la Universidad de Niagara Falls Canada.
+      </div>
+      <div class="card-tag">
+        <svg width="8" height="8" viewBox="0 0 8 8" fill="none">
+          <circle cx="4" cy="4" r="3" fill="#3730A3"/>
+        </svg>
+        Innovación Educativa
+      </div>
+    </div>
+
+    <!-- CARD 3: SPECIAL GUEST -->
+    <div class="agenda-card card-guest">
+      <span class="card-number">03</span>
+      <div class="card-icon-wrap">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+          <!-- Star / speaker icon -->
+          <path d="M14 3 L16.1 9.4 L23 9.4 L17.5 13.3 L19.6 19.7 L14 15.8 L8.4 19.7 L10.5 13.3 L5 9.4 L11.9 9.4 Z" fill="#F5A623" opacity="0.8"/>
+          <!-- Podium/stage hint -->
+          <rect x="10" y="21" width="8" height="2" rx="1" fill="#B45309" opacity="0.5"/>
+          <rect x="8" y="23" width="12" height="2" rx="1" fill="#B45309" opacity="0.35"/>
+        </svg>
+      </div>
+      <div class="card-title">Invitado Especial</div>
+      <div class="card-body">
+        Participación especial de Harold, experto reconocido en dinámica de equipos y desarrollo del potencial humano dentro del ámbito corporativo.
+      </div>
+      <div class="card-tag">
+        <svg width="8" height="8" viewBox="0 0 8 8" fill="none">
+          <circle cx="4" cy="4" r="3" fill="#92400E"/>
+        </svg>
+        Keynote Especial
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ═══════════════════════════════════
+       HAROLD FEATURED SECTION
+  ══════════════════════════════════════ -->
+  <div class="harold-section">
+    <div class="harold-card">
+      <!-- Avatar: professional silhouette -->
+      <div class="harold-avatar">
+        <svg width="58" height="58" viewBox="0 0 58 58" fill="none">
+          <!-- Shoulders -->
+          <path d="M8 52 C8 38 18 32 29 32 C40 32 50 38 50 52" fill="rgba(255,255,255,0.15)"/>
+          <!-- Head -->
+          <circle cx="29" cy="21" r="11" fill="rgba(255,255,255,0.20)"/>
+          <!-- Face highlights -->
+          <circle cx="29" cy="20" r="8.5" fill="rgba(255,255,255,0.12)"/>
+          <!-- Tie/formal -->
+          <path d="M25 32 L29 38 L33 32" fill="rgba(245,166,35,0.35)"/>
+        </svg>
+      </div>
+
+      <div class="harold-info">
+        <div class="harold-tag">
+          <svg width="8" height="8" viewBox="0 0 8 8">
+            <path d="M4 0.5 L4.8 2.8 L7.2 2.8 L5.2 4.3 L6 6.5 L4 5 L2 6.5 L2.8 4.3 L0.8 2.8 L3.2 2.8 Z" fill="#F5A623"/>
+          </svg>
+          <span>Special Guest Speaker</span>
+        </div>
+        <div class="harold-name">Harold</div>
+        <div class="harold-title">
+          Expert in <strong>Potential & Team Dynamics</strong><br/>
+          Especialista en desarrollo del capital humano y alto rendimiento organizacional
+        </div>
+      </div>
+
+      <div class="harold-divider"></div>
+
+      <div class="harold-quote">
+        <div class="harold-quote-mark">"</div>
+        <div class="harold-quote-text">
+          Unlocking the potential within every team is the foundation of sustainable organizational excellence.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════
+       BILATERAL BRIDGE
+  ══════════════════════════════════════ -->
+  <div class="section-header" style="padding-top:0;">
+    <div class="section-header-label">Alianza Bilateral</div>
+    <div class="section-header-line"></div>
+  </div>
+
+  <div class="bridge-section">
+    <div class="bridge-card">
+      <!-- Ecuador side -->
+      <div class="bridge-side">
+        <div class="bridge-flag ec">
+          <!-- Ecuador-inspired: Andes silhouette + sun -->
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+            <rect width="36" height="36" rx="8" fill="white"/>
+            <!-- Andes -->
+            <path d="M2 28 L8 18 L13 24 L18 14 L23 22 L28 16 L34 24 L34 28 Z" fill="#003087" opacity="0.5"/>
+            <!-- Sun -->
+            <circle cx="18" cy="11" r="5" fill="#F5A623" opacity="0.85"/>
+            <line x1="18" y1="4" x2="18" y2="2" stroke="#F5A623" stroke-width="1.3" stroke-linecap="round"/>
+            <line x1="18" y1="20" x2="18" y2="22" stroke="#F5A623" stroke-width="1.3" stroke-linecap="round"/>
+            <line x1="11" y1="11" x2="9" y2="11" stroke="#F5A623" stroke-width="1.3" stroke-linecap="round"/>
+            <line x1="25" y1="11" x2="27" y2="11" stroke="#F5A623" stroke-width="1.3" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="bridge-country">
+          <div class="bridge-country-name">Ecuador</div>
+          <div class="bridge-country-desc">Hub empresarial latinoamericano, biodiversidad y economía emergente en crecimiento.</div>
+        </div>
+      </div>
+
+      <!-- Center connector -->
+      <div class="bridge-center">
+        <div class="bridge-connector">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+            <path d="M6 14H22M16 8L22 14L16 20" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M22 14H6M12 8L6 14L12 20" stroke="rgba(255,255,255,0.4)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="bridge-label">Alianza<br/>Estratégica</div>
+      </div>
+
+      <!-- Canada side -->
+      <div class="bridge-side" style="flex-direction: row-reverse; text-align:right;">
+        <div class="bridge-flag ca">
+          <!-- Canada: maple leaf -->
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+            <rect width="36" height="36" rx="8" fill="white"/>
+            <path d="M18 5 L16 12 L10 11 L14 15 L12 22 L18 19 L24 22 L22 15 L26 11 L20 12 Z" fill="#CC0000" opacity="0.85"/>
+            <rect x="17" y="22" width="2" height="6" rx="1" fill="#CC0000" opacity="0.85"/>
+          </svg>
+        </div>
+        <div class="bridge-country">
+          <div class="bridge-country-name">Canadá</div>
+          <div class="bridge-country-desc">Centro de excelencia académica, innovación tecnológica y liderazgo global.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════
+       KEY FACTS
+  ══════════════════════════════════════ -->
+  <div class="section-header" style="padding-top:0;">
+    <div class="section-header-label">Datos del Evento</div>
+    <div class="section-header-line"></div>
+  </div>
+
+  <div class="facts-section">
+    <div class="fact-card accent">
+      <div class="fact-icon">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+          <path d="M11 2L3 6V11C3 15.971 6.582 20.476 11 21C15.418 20.476 19 15.971 19 11V6L11 2Z" stroke="#F5A623" stroke-width="1.4"/>
+          <path d="M7 11L10 14L15 9" stroke="#F5A623" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="fact-value" style="color:#B45309;">2h</div>
+      <div class="fact-label">Duración</div>
+    </div>
+
+    <div class="fact-card primary">
+      <div class="fact-icon">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+          <circle cx="9" cy="7" r="3.5" stroke="#003087" stroke-width="1.4"/>
+          <circle cx="15" cy="9" r="3" stroke="#003087" stroke-width="1.2"/>
+          <path d="M2 19C2 15.686 5.134 13 9 13" stroke="#003087" stroke-width="1.4" stroke-linecap="round"/>
+          <path d="M15 15C17.761 15 20 16.567 20 19" stroke="#003087" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="fact-value">Partners</div>
+      <div class="fact-label">Audience</div>
+    </div>
+
+    <div class="fact-card secondary">
+      <div class="fact-icon">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+          <rect x="2" y="4" width="18" height="14" rx="2" stroke="#0057B8" stroke-width="1.4"/>
+          <path d="M2 8H20" stroke="#0057B8" stroke-width="1.4"/>
+          <rect x="6" y="11" width="4" height="3" rx="0.5" fill="#0057B8" opacity="0.4"/>
+          <rect x="12" y="11" width="4" height="3" rx="0.5" fill="#0057B8" opacity="0.4"/>
+        </svg>
+      </div>
+      <div class="fact-value">3</div>
+      <div class="fact-label">Actividades</div>
+    </div>
+
+    <div class="fact-card neutral">
+      <div class="fact-icon">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+          <circle cx="11" cy="11" r="9" stroke="#94A3B8" stroke-width="1.4"/>
+          <path d="M11 6V11.5L14.5 14" stroke="#94A3B8" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="fact-value">9AM</div>
+      <div class="fact-label">Inicio</div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════
+       TIMELINE
+  ══════════════════════════════════════ -->
+  <div class="section-header" style="padding-top:0;">
+    <div class="section-header-label">Agenda del Día</div>
+    <div class="section-header-line"></div>
+  </div>
+
+  <div class="timeline-section">
+    <div class="timeline-card">
+      <div class="timeline-track">
+
+        <div class="timeline-step">
+          <div class="timeline-dot dot-1">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+              <circle cx="6" cy="6" r="3" fill="#FFFFFF"/>
+            </svg>
+          </div>
+          <div class="timeline-time">9:00 AM</div>
+          <div class="timeline-desc">Registro &<br/>Bienvenida</div>
+        </div>
+
+        <div class="timeline-step">
+          <div class="timeline-dot dot-2">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+              <circle cx="6" cy="6" r="3" fill="#FFFFFF"/>
+            </svg>
+          </div>
+          <div class="timeline-time">9:20 AM</div>
+          <div class="timeline-desc">Networking<br/>Inicial</div>
+        </div>
+
+        <div class="timeline-step">
+          <div class="timeline-dot dot-3">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+              <circle cx="6" cy="6" r="3" fill="#FFFFFF"/>
+            </svg>
+          </div>
+          <div class="timeline-time">9:50 AM</div>
+          <div class="timeline-desc">UNFC.CA<br/>Updates</div>
+        </div>
+
+        <div class="timeline-step">
+          <div class="timeline-dot dot-4">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+              <circle cx="6" cy="6" r="3" fill="#FFFFFF"/>
+            </svg>
+          </div>
+          <div class="timeline-time">10:25 AM</div>
+          <div class="timeline-desc">Harold —<br/>Keynote</div>
+        </div>
+
+        <div class="timeline-step">
+          <div class="timeline-dot dot-5">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+              <circle cx="6" cy="6" r="3" fill="#FFFFFF"/>
+            </svg>
+          </div>
+          <div class="timeline-time">11:00 AM</div>
+          <div class="timeline-desc">Cierre &<br/>Networking</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════ -->
+  <div class="footer">
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+          <path d="M14 1.5L2.5 6.5V15C2.5 21.351 7.649 26.5 14 27.5C20.351 26.5 25.5 21.351 25.5 15V6.5L14 1.5Z" fill="#003087"/>
+          <path d="M14 5L5 9V15C5 19.971 9.029 24.5 14 25.5C18.971 24.5 23 19.971 23 15V9L14 5Z" fill="#0057B8"/>
+          <path d="M14 9 L12.8 12.8 L9 12.8 L12 14.9 L10.8 18.7 L14 16.6 L17.2 18.7 L16 14.9 L19 12.8 L15.2 12.8 Z" fill="#F5A623" opacity="0.95"/>
+        </svg>
+      </div>
+      <div class="footer-brand-text">
+        <div class="footer-brand-name">University of Niagara Falls Canada</div>
+        <div class="footer-brand-url">www.unfc.ca</div>
+      </div>
+    </div>
+
+    <div class="footer-center">
+      <div class="footer-tagline">
+        Organizado por <strong>UNFC.CA</strong> para la<br/>
+        Cámara de Comercio <strong>Ecuatoriano-Canadiense</strong>
+      </div>
+    </div>
+
+    <div class="footer-right">
+      <div class="footer-date-badge">
+        <div class="date-day">9</div>
+        <div class="date-month">Abril 2026</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <span>© 2026 University of Niagara Falls Canada — UNFC.CA</span>
+    <span>Desayuno de Partners · Quito, Ecuador · 9:00 – 11:00 AM</span>
+  </div>
+
+</div>
+</body>
+</html>
