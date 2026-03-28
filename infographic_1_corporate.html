@@ -18,7 +18,8 @@
     }
 
     .infographic {
-      width: 800px;
+      max-width: 800px;
+      width: 100%;
       background: #F4F6F9;
       border-radius: 4px;
       overflow: hidden;
@@ -815,6 +816,66 @@
       font-size: 9.5px;
       color: rgba(255,255,255,0.30);
       letter-spacing: 0.08em;
+    }
+
+    /* ─── RESPONSIVE: TABLET ─── */
+    @media (max-width: 700px) {
+      body { padding: 0; }
+
+      .infographic { border-radius: 0; box-shadow: none; }
+
+      /* Header */
+      .header { padding: 28px 20px 24px; }
+      .header-top { flex-direction: column; align-items: flex-start; gap: 12px; }
+      .event-title { font-size: 26px; }
+      .event-chamber { font-size: 11px; margin-bottom: 20px; }
+
+      /* DateTime strip → stack vertically */
+      .datetime-strip { flex-direction: column; }
+      .dt-item + .dt-item { border-left: none; border-top: 1px solid rgba(255,255,255,0.12); }
+      .dt-item { padding: 12px 16px; }
+
+      /* Intro band */
+      .intro-band { padding: 20px; flex-direction: column; align-items: flex-start; gap: 16px; }
+
+      /* Section headers */
+      .section-header { padding: 24px 20px 0; }
+
+      /* Agenda → 1 columna */
+      .agenda-grid { grid-template-columns: 1fr; padding: 0 20px 28px; gap: 14px; }
+
+      /* Harold → stack */
+      .harold-section { padding: 0 20px 28px; }
+      .harold-card { flex-direction: column; align-items: flex-start; gap: 20px; padding: 24px 20px; }
+      .harold-divider { display: none; }
+      .harold-quote { flex: 1 1 auto; }
+      .harold-name { font-size: 20px; }
+
+      /* Bridge → stack */
+      .bridge-section { padding: 0 20px 28px; }
+      .bridge-card { flex-direction: column; gap: 16px; padding: 20px; }
+      .bridge-center { flex-direction: row; gap: 12px; }
+
+      /* Facts → 2 columnas */
+      .facts-section { grid-template-columns: 1fr 1fr; padding: 0 20px 28px; gap: 12px; }
+
+      /* Timeline → scroll horizontal */
+      .timeline-section { padding: 0 20px 28px; }
+      .timeline-card { padding: 20px 16px; overflow-x: auto; }
+      .timeline-track { min-width: 480px; }
+
+      /* Footer → stack */
+      .footer { flex-direction: column; align-items: flex-start; padding: 24px 20px; gap: 16px; }
+      .footer-right { text-align: left; }
+      .footer-bottom { padding: 10px 20px; flex-direction: column; gap: 4px; text-align: center; }
+    }
+
+    /* ─── RESPONSIVE: PEQUEÑO (360px phones) ─── */
+    @media (max-width: 420px) {
+      .event-title { font-size: 22px; }
+      .harold-name { font-size: 18px; }
+      .facts-section { grid-template-columns: 1fr 1fr; gap: 10px; }
+      .dt-value { font-size: 13px; }
     }
   </style>
 </head>
