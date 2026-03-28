@@ -64,7 +64,7 @@
       content:'';
       display:block;
       height: 70px;
-      background: var(--white);
+      background: transparent;
       clip-path: ellipse(110% 100% at 50% 100%);
       margin-top: 40px;
     }
@@ -419,8 +419,9 @@
 
       /* Hero */
       .hero { padding: 28px 20px 0; }
-      .hero-top { flex-direction: column; gap: 20px; }
-      .logo-box { margin-left: 0; }
+      .hero-top { flex-direction: row; align-items: flex-start; gap: 12px; }
+      .logo-box { margin-left: 0; flex-shrink: 0; }
+      .logo-box img { width: 36px !important; }
       .hero h1 { font-size: 24px; letter-spacing: 0.5px; }
       .hero-sub { font-size: 12px; max-width: 100%; }
       .hero-flags { flex-wrap: wrap; gap: 8px; margin-top: 16px; }
